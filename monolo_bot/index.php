@@ -22,7 +22,7 @@ require 'vendor/autoload.php';
 $client = new Zelenin\Telegram\Bot\Api('232355392:AAHs5w6ZiokZx8AXTvx2oHm6nYJJyOzm18I'); // Set your access token
 $url = ''; // URL RSS feed
 $update = json_decode(file_get_contents('php://input'));
-
+print_r($update);
 //your app
 try {
 
@@ -39,8 +39,7 @@ try {
     	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
-    		'text' => "List of commands :\n /email -> Get email address of the owner \n /latest -> Get latest posts of the blog 
-    		\n /help -> Shows list of available commands"
+    		'text' => "List of commands :\n /email -> Get email address of the owner \n /latest -> Get latest posts of the blog \n /help -> Shows list of available commands"
     		]);
 
     }
