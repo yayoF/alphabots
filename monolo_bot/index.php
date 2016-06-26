@@ -60,7 +60,7 @@ try {
             $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
             $response = $client->sendMessage([
                     'chat_id' => $update->message->chat->id,
-                    'text' => "chikicalc: ".$operationString
+                    'text' => chikicalc($operationString)
                 ]);
 
     }
@@ -79,3 +79,11 @@ try {
     //echo $e->getMessage();
 
 }
+
+//private funcs
+public function chikicalc($operationString){
+    $result = 'holi';
+
+    return "chikicalc: ".$result;
+}
+
