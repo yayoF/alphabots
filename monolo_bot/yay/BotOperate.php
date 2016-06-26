@@ -13,5 +13,3 @@ class BotOperate
 
 	    return "chikicalc: ".$result;
 	}
-
-?>
