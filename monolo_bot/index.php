@@ -54,12 +54,12 @@ try {
 				]);
 
     }
-    else if($update->message->text == '/holi')
+    else if(substr($update->message->text,0,10) === "/chikicalc")
     {
             $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
             $response = $client->sendMessage([
                     'chat_id' => $update->message->chat->id,
-                    'text' => "text: ".$update->message->text
+                    'text' => "chikicalc: ".$update->message->text
                 ]);
 
     }
