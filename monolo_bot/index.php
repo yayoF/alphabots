@@ -18,7 +18,7 @@
 *
 */
 require 'vendor/autoload.php';
-//include('yay/BotOperate.php');
+require_once 'yay/BotOperate.php';
 
 $client = new Zelenin\Telegram\Bot\Api('232355392:AAG9qESNa-8w4Iz7fAwp1HlWeHcJEAK0C2I'); // Set your access token
 //$yayOperate = new yay\BotOperate();
