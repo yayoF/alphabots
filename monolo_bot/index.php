@@ -31,7 +31,7 @@ try {
     	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
     	$response = $client->sendMessage([
         	'chat_id' => $update->message->chat->id,
-        	'text' => "You can send email to : Kasra@madadipouya.com"
+        	'text' => "You can send email to : yayo.zip@gmail.com"
      	]);
     }
     else if($update->message->text == '/help')
@@ -40,7 +40,7 @@ try {
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
     		'text' => "List of commands :\n /email -> Get email address of the owner \n /latest -> Get latest posts of the blog 
-    		/help -> Shows list of available commands"
+    		\n /help -> Shows list of available commands"
     		]);
 
     }
