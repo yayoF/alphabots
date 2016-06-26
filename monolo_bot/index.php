@@ -21,7 +21,7 @@ require 'vendor/autoload.php';
 require 'yay/funcs.php';
 
 $client = new Zelenin\Telegram\Bot\Api('232355392:AAG9qESNa-8w4Iz7fAwp1HlWeHcJEAK0C2I'); // Set your access token
-$url = ''; // URL RSS feed
+$yayOperate = new yay\BotOperate();
 $update = json_decode(file_get_contents('php://input'));
 
 //your app
@@ -60,8 +60,8 @@ try {
             $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
 
             $operationString = substr($update->message->text, 10);
-            $chikicalcResult = chikicalc($operationString);
-            
+            $chikicalcResult = $yayOperate->chikicalc($operationString);
+
             $response = $client->sendMessage([
                     'chat_id' => $update->message->chat->id,
                     'text' => $chikicalcResult
