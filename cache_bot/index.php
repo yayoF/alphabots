@@ -7,5 +7,7 @@
 
 	$updateArray = json_decode($update, TRUE);
 
-	print_r($updateArray);
+	$text = $updateArray["result"][0]["message"]["text"];
+
+	print_r($text);
 ?>
