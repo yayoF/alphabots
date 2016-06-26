@@ -18,6 +18,7 @@
 *
 */
 require 'vendor/autoload.php';
+require 'yay/funcs.php';
 
 $client = new Zelenin\Telegram\Bot\Api('232355392:AAG9qESNa-8w4Iz7fAwp1HlWeHcJEAK0C2I'); // Set your access token
 $url = ''; // URL RSS feed
@@ -80,10 +81,5 @@ try {
 
 }
 
-//private funcs
-public function chikicalc($operationString){
-    $result = 'holi';
 
-    return "chikicalc: ".$result;
-}
 
