@@ -54,6 +54,15 @@ try {
 				]);
 
     }
+    else if($update->message->text == '/holi')
+    {
+            $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+            $response = $client->sendMessage([
+                    'chat_id' => $update->message->chat->id,
+                    'text' => "text: ".$update->message->text
+                ]);
+
+    }
     else
     {
     	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
