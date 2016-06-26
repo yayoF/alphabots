@@ -2,9 +2,6 @@
 namespace yay;
 class BotOperate
 {
-    /**
-     * @var string
-     */
     private $result;
     public function __construct()
     {
@@ -16,3 +13,5 @@ class BotOperate
 
 	    return "chikicalc: ".$result;
 	}
+
+?>
