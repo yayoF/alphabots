@@ -57,11 +57,14 @@ try {
     }
     else if(substr($update->message->text,0,10) === "/chikicalc")
     {
-            $operationString = substr($update->message->text, 10); 
             $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+
+            $operationString = substr($update->message->text, 10);
+            $chikicalcResult = chikicalc($operationString);
+            
             $response = $client->sendMessage([
                     'chat_id' => $update->message->chat->id,
-                    'text' => chikicalc($operationString)
+                    'text' => $chikicalcResult
                 ]);
 
     }
