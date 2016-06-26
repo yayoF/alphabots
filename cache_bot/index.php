@@ -1,12 +1,78 @@
 <?php
 
-	$botToken = "116742563:AAGE8AXH9uIW91YSkc0lZg2V51ZIyDhQrR4";
-	$website = "https://api.telegram.org/bot".$botToken;
+/*
+* This file is part of GeeksWeb Bot (GWB).
+*
+* GeeksWeb Bot (GWB) is free software; you can redistribute it and/or modify
+* it under the terms of the GNU General Public License version 3
+* as published by the Free Software Foundation.
+* 
+* GeeksWeb Bot (GWB) is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* GNU General Public License for more details.  <http://www.gnu.org/licenses/>
+*
+* Author(s):
+*
+* © 2015 Kasra Madadipouya <kasra@madadipouya.com>
+*
+*/
+require 'vendor/autoload.php';
 
-	$update = file_get_contents('php://input');
-	$updateArray = json_decode($update, TRUE);
+$client = new Zelenin\Telegram\Bot\Api('116742563:AAGE8AXH9uIW91YSkc0lZg2V51ZIyDhQrR4'); // Set your access token
+$url = ''; // URL RSS feed
+$update = json_decode(file_get_contents('php://input'));
 
-	$chatId = $updateArray["result"][0]["message"]["chat"]["id"];
+//your app
+try {
 
-	file_get_contents($website."/sendmessage?chat_id=".$chatId."&text=test");
-?>
+    if($update->message->text == '/email')
+    {
+    	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+    	$response = $client->sendMessage([
+        	'chat_id' => $update->message->chat->id,
+        	'text' => "You can send email to : Kasra@madadipouya.com"
+     	]);
+    }
+    else if($update->message->text == '/help')
+    {
+    	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+    	$response = $client->sendMessage([
+    		'chat_id' => $update->message->chat->id,
+    		'text' => "List of commands :\n /email -> Get email address of the owner \n /latest -> Get latest posts of the blog 
+    		/help -> Shows list of available commands"
+    		]);
+
+    }
+    else if($update->message->text == '/latest')
+    {
+    		Feed::$cacheDir 	= __DIR__ . '/cache';
+			Feed::$cacheExpire 	= '5 hours';
+			$rss 		= Feed::loadRss($url);
+			$items 		= $rss->item;
+			$lastitem 	= $items[0];
+			$lastlink 	= $lastitem->link;
+			$lasttitle 	= $lastitem->title;
+			$message = $lasttitle . " \n ". $lastlink;
+			$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+			$response = $client->sendMessage([
+					'chat_id' => $update->message->chat->id,
+					'text' => $message
+				]);
+
+    }
+    else
+    {
+    	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+    	$response = $client->sendMessage([
+    		'chat_id' => $update->message->chat->id,
+    		'text' => "Invalid command, please use /help to get list of available commands"
+    		]);
+    }
+
+} catch (\Zelenin\Telegram\Bot\NotOkException $e) {
+
+    //echo error message ot log it
+    //echo $e->getMessage();
+
+}
