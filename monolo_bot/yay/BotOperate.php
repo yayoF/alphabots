@@ -21,8 +21,9 @@ class BotOperate
 	}
 
 	public function chikiRecetaBrownie(){
+		
 	    $fullString = "Ingredientes:
-	    				✔ 1/2 tazas de Harina
+						✔ 1/2 tazas de Harina
 						✔ 200 gramos de mantequilla (se puede utilizar igual cantidad de mantequilla cannábica)
 						✔ 2 tazas de azúcar
 						✔ 4 huevos batidos
