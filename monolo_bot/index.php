@@ -57,6 +57,15 @@ try {
                     'text' => $chikicalcResult
                 ]);
     }
+    else if($update->message->text == '/chikibrownies')
+    {
+        $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+        $response = $client->sendMessage([
+            'chat_id' => $update->message->chat->id,
+            'text' => $yayOperate->chikiRecetaBrownie()
+            ]);
+
+    }
     else
     {
         
@@ -74,6 +83,11 @@ try {
     //echo $e->getMessage();
 
 }
+
+//playground
+
+//end playground
+
 echo "
     <meta charset=\"utf-8\">
     <div style=\"font-family: 'Courier New', Courier, 'Lucida Sans Typewriter', 'Lucida Typewriter', monospace;
