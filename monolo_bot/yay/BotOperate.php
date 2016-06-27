@@ -14,7 +14,7 @@ class BotOperate
 		$eq = new eqEOS();
 		$result = $eq->solveIF($equation);
 
-		$chikifactor = $testoutput - 420;
+		$chikifactor = $result - 420;
 		$chikival = "🍁420 + ".$chikifactor;
 
 	    return $chikival;
