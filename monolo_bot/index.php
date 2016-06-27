@@ -72,10 +72,6 @@ try {
         $fotos = $client->getUserProfilePhotos([
             'user_id' => $update->message->from->id
             ]);
-        $response = $client->sendPhoto([
-            'chat_id' => $update->message->chat->id,
-            'photo' => $fotos[0]
-            ]);
 
     }
     else
