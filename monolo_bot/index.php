@@ -74,7 +74,7 @@ try {
             ]);
         $response = $client->sendPhoto([
             'chat_id' => $update->message->chat->id,
-            'photo' => $fotos[0];
+            'photo' => $fotos[0]
             ]);
 
     }
