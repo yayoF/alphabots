@@ -40,19 +40,10 @@ try {
     	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
-    		'text' => "List of commands :\n /email -> Get email address of the owner
+    		'text' => "List of commands :\n /email -> Get email address of the developer
              /chikicalc [operation] -> Chiki performs fast calculations
              /help -> Shows list of available commands"
     		]);
-
-    }
-    else if($update->message->text == '/chikicalc')
-    {
-			$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
-			$response = $client->sendMessage([
-					'chat_id' => $update->message->chat->id,
-					'text' => $message
-				]);
 
     }
     else if(substr($update->message->text,0,10) === "/chikicalc")
