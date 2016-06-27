@@ -1,6 +1,6 @@
 <?php
 
-namespace Zelenin\Telegram\Bot\Exception;
+namespace Zelenin\Telegram\Bot;
 
 use Exception;
 

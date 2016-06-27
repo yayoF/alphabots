@@ -35,7 +35,7 @@ class Video extends Type
     public $duration;
 
     /**
-     * Optional. Video thumbnail
+     * Video thumbnail
      *
      * @var PhotoSize
      */
@@ -54,6 +54,13 @@ class Video extends Type
      * @var integer
      */
     public $file_size;
+
+    /**
+     * Optional. Text description of the video (usually empty)
+     *
+     * @var string
+     */
+    public $caption;
 
     /**
      * @param stdClass $result

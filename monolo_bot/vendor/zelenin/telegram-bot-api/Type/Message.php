@@ -98,20 +98,6 @@ class Message extends Type
     public $video;
 
     /**
-     * Optional. Message is a voice message, information about the file
-     *
-     * @var Voice
-     */
-    public $voice;
-
-    /**
-     * Optional. Caption for the photo or video
-     *
-     * @var string
-     */
-    public $caption;
-
-    /**
      * Optional. Message is a shared contact, information about the contact
      *
      * @var Contact
@@ -120,7 +106,6 @@ class Message extends Type
 
     /**
      * Optional. Message is a shared location, information about the location
-     *
      * @var Location
      */
     public $location;
@@ -211,10 +196,6 @@ class Message extends Type
 
         if (isset($result->video)) {
             $this->video = new Video($result->video);
-        }
-
-        if (isset($result->voice)) {
-            $this->voice = new Voice($result->voice);
         }
 
         if (isset($result->contact)) {

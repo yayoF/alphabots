@@ -20,12 +20,7 @@
         "source": "https://github.com/zelenin/telegram-bot-api"
     },
     "require": {
-        "php": ">=5.5.0",
-        "guzzlehttp/guzzle": "~6",
-        "amphp/amp": "~1.0"
-    },
-    "suggest": {
-        "ext/pcntl": "Usage of signal handler"
+        "guzzlehttp/guzzle": "~6"
     },
     "autoload": {
         "psr-4": {

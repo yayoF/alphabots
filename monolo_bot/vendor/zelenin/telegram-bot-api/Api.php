@@ -3,8 +3,6 @@
 namespace Zelenin\Telegram\Bot;
 
 use stdClass;
-use Zelenin\Telegram\Bot\Exception\NotOkException;
-use Zelenin\Telegram\Bot\Type\File;
 use Zelenin\Telegram\Bot\Type\Message;
 use Zelenin\Telegram\Bot\Type\ReplyMarkup;
 use Zelenin\Telegram\Bot\Type\Update;
@@ -186,21 +184,6 @@ class Api
      *
      * @throws NotOkException
      */
-    public function sendVoice($params)
-    {
-        if (isset($params['reply_markup']) && $params['reply_markup'] instanceof ReplyMarkup) {
-            $params['reply_markup'] = json_encode($params['reply_markup']);
-        }
-        return new Message($this->request('sendVideo', $params));
-    }
-
-    /**
-     * @param $params
-     *
-     * @return Message
-     *
-     * @throws NotOkException
-     */
     public function sendLocation($params)
     {
         if (isset($params['reply_markup']) && $params['reply_markup'] instanceof ReplyMarkup) {
@@ -231,18 +214,6 @@ class Api
     public function getUserProfilePhotos($params)
     {
         return new UserProfilePhotos($this->request('getUserProfilePhotos', $params));
-    }
-
-    /**
-     * @param $params
-     *
-     * @return File
-     *
-     * @throws NotOkException
-     */
-    public function getFile($params)
-    {
-        return new File($this->request('getFile', $params));
     }
 
     /**

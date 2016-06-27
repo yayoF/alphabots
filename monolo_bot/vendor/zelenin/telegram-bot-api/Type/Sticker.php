@@ -28,7 +28,7 @@ class Sticker extends Type
     public $height;
 
     /**
-     * Optional. Sticker thumbnail in .webp or .jpg format
+     * Sticker thumbnail in .webp or .jpg format
      *
      * @var PhotoSize
      */

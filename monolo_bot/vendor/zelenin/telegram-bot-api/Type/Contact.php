@@ -28,7 +28,7 @@ class Contact extends Type
     /**
      * Optional. Contact's user identifier in Telegram
      *
-     * @var integer
+     * @var string
      */
     public $user_id;
 }
