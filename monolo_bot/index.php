@@ -21,7 +21,7 @@ require 'vendor/autoload.php';
 require_once 'yay/BotOperate.php';
 
 $client = new Zelenin\Telegram\Bot\Api('232355392:AAG9qESNa-8w4Iz7fAwp1HlWeHcJEAK0C2I'); // Set your access token
-//$yayOperate = new yay\BotOperate();
+$yayOperate = new BotOperate();
 $update = json_decode(file_get_contents('php://input'));
 
 //your app
@@ -60,21 +60,21 @@ try {
             $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
 
             $operationString = substr($update->message->text, 10);
-            //$chikicalcResult = $yayOperate->chikicalc($operationString);
-
+            $chikicalcResult = $yayOperate->chikicalc($operationString);
             $response = $client->sendMessage([
                     'chat_id' => $update->message->chat->id,
-                    'text' => 'holi'
+                    'text' => $chikicalcResult
                 ]);
-
     }
     else
     {
+        
     	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
     		'text' => "Invalid command, please use /help to get list of available commands"
     		]);
+            
     }
 
 } catch (\Zelenin\Telegram\Bot\NotOkException $e) {
@@ -83,6 +83,12 @@ try {
     //echo $e->getMessage();
 
 }
-
+echo "
+    <meta charset=\"utf-8\">
+    <div style=\"font-family: 'Courier New', Courier, 'Lucida Sans Typewriter', 'Lucida Typewriter', monospace;
+                left: 0;line-height: 200px;margin-top: -100px;position: absolute;text-align: center;top: 50%;width: 100%;\">
+        bien csm
+    </div>
+";
 
 

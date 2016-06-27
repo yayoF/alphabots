@@ -1,16 +1,22 @@
 <?php
-namespace yay;
+require_once 'vendor/eos-1.0.0/eos.class.php';
 class BotOperate
 {
     private $result;
+
     public function __construct()
     {
         $this->result = "";
     }
 
 	public function chikicalc($operationString){
-	    $result = 'holi';
+	    $equation = $operationString;
+		$eq = new eqEOS();
+		$result = $eq->solveIF($equation);
 
-	    return "chikicalc: ".$result;
+		$chikifactor = $testoutput - 420;
+		$chikival = "🍁420 + ".$chikifactor;
+
+	    return $chikival;
 	}
 }
