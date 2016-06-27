@@ -66,6 +66,14 @@ try {
             ]);
 
     }
+    else if($update->message->text == '/fotos')
+    {
+        $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'upload_photo']);
+        $response = $client->getUserProfilePhotos([
+            'user_id' => $update->message->from->id
+            ]);
+
+    }
     else
     {
         
