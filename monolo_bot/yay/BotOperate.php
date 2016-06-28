@@ -45,7 +45,7 @@ class BotOperate
 				$resultQuote = "🍁Más vale pava en mano que moño rodando.";
 				break;
 			case 1:
-				$resultQuote = "🍁No busques la pepa en el wiro ajeno."
+				$resultQuote = "🍁No busques la pepa en el wiro ajeno.";
 				break;
 			default:
 				$resultQuote = "🍁A wiro regalado no se le buscan pepas."
