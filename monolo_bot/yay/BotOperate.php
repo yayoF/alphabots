@@ -42,16 +42,16 @@ class BotOperate
 		$resultQuote = "";
 		switch($randomNumber){
 			case 0:
-				$resultQuote = $randomNumber."🍁Más vale pava en mano que moño rodando.";
+				$resultQuote = "🍁Más vale pava en mano que moño rodando.";
 				break;
 			case 1:
-				$resultQuote = $randomNumber."🍁No busques la pepa en el wiro ajeno.";
+				$resultQuote = "🍁No busques la pepa en el wiro ajeno.";
 				break;
 			case 2:
-				$resultQuote = $randomNumber."🍁Camaron con la pálida se vuelve una crisálida.";
+				$resultQuote = "🍁Camaron con la pálida se vuelve una crisálida.";
 				break;
 			default:
-				$resultQuote = $randomNumber."🍁A wiro regalado no se le buscan pepas."
+				$resultQuote = "🍁A wiro regalado no se le buscan pepas."
 			;
 		}
 	    
