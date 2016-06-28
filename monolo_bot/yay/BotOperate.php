@@ -38,11 +38,14 @@ class BotOperate
 	}
 
 	public function chikiRefranes(){
-		$randomNumber =rand (0,10);
+		$randomNumber =rand (0,3);
 		$resultQuote = "";
 		switch($randomNumber){
 			case 0:
 				$resultQuote = "🍁Más vale pava en mano que moño rodando.";
+				break;
+			case 1:
+				$resultQuote = "🍁No busques la pepa en el wiro ajeno."
 				break;
 			default:
 				$resultQuote = "🍁A wiro regalado no se le buscan pepas."
