@@ -21,8 +21,8 @@ require 'vendor/autoload.php';
 require_once 'yay/BotOperate.php';
 
 $client = new Zelenin\Telegram\Bot\Api('232355392:AAG9qESNa-8w4Iz7fAwp1HlWeHcJEAK0C2I'); // Set your access token
-$yayOperate = new BotOperate();
 $update = json_decode(file_get_contents('php://input'));
+$yayOperate = new BotOperate();
 
 //your app
 try {
@@ -72,14 +72,6 @@ try {
         $response = $client->sendMessage([
             'chat_id' => $update->message->chat->id,
             'text' => $yayOperate->chikiRefranes()
-            ]);
-
-    }
-    else if($update->message->text == '/fotos')
-    {
-        $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'upload_photo']);
-        $fotos = $client->getUserProfilePhotos([
-            'user_id' => $update->message->from->id
             ]);
 
     }

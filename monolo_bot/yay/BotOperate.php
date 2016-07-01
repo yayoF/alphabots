@@ -54,8 +54,6 @@ class BotOperate
 				$resultQuote = "🍁A wiro regalado no se le buscan pepas."
 			;
 		}
-	    
-
 	    return $resultQuote;
 	}
 
