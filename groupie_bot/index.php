@@ -20,7 +20,7 @@
 require 'vendor/autoload.php';
 require_once 'yay/BotOperate.php';
 
-$client = new Zelenin\Telegram\Bot\Api('accesstoken'); // Set your access token
+$client = new Zelenin\Telegram\Bot\Api('242218201:AAHAq1nnzCa9AI82VnpRmRT-O58iDvk19l0'); // Set your access token
 $update = json_decode(file_get_contents('php://input'));
 $yayOperate = new BotOperate();
 
@@ -41,7 +41,7 @@ try {
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
     		'text' => "List of commands :\n /email -> Get email address of the developer
-             /chikicalc [operation] -> Chiki performs fast calculations
+             /to_be_defined [operation] -> some bot stuff
              /help -> Shows list of available commands"
     		]);
 
