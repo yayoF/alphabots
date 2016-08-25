@@ -46,6 +46,16 @@ try {
     		]);
 
     }
+    else if($update->message->text == '/nlm_chatId')
+    {
+        $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+        $response = $client->sendMessage([
+            'chat_id' => $update->message->chat->id,
+            'text' => json_decode($update->message, true)
+            ]);
+
+    }
+    /*
     else if(substr($update->message->text,0,10) === "/chikicalc")
     {
             $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
@@ -75,6 +85,7 @@ try {
             ]);
 
     }
+    */
     else
     {
         
