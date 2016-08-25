@@ -51,7 +51,7 @@ try {
         $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
         $response = $client->sendMessage([
             'chat_id' => $update->message->chat->id,
-            'text' => String(json_decode($update->message, true))
+            'text' => 'this chat id is: '.$update->message->chat->id
             ]);
 
     }
