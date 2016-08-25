@@ -24,7 +24,7 @@ $client = new Zelenin\Telegram\Bot\Api('242218201:AAHAq1nnzCa9AI82VnpRmRT-O58iDv
 $update = json_decode(file_get_contents('php://input'));
 $yayOperate = new BotOperate();
 
-//your app
+//Nadie La Merece: [chat->id => -124307876, ]
 try {
 
     if($update->message->text == '/email')
