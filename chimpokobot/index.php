@@ -41,37 +41,36 @@ try {
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
     		'text' => "List of commands :\n /email -> Get email address of the developer
-             /chikicalc [operation] -> Chiki performs fast calculations
              /help -> Shows list of available commands"
     		]);
 
     }
-    else if(substr($update->message->text,0,10) === "/chikicalc")
-    {
-            $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+    // else if(substr($update->message->text,0,10) === "/chikicalc")
+    // {
+    //         $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
 
-            $operationString = substr($update->message->text, 10);
-            $chikicalcResult = $yayOperate->chikicalc($operationString);
-            $response = $client->sendMessage([
-                    'chat_id' => $update->message->chat->id,
-                    'text' => $chikicalcResult
-                ]);
-    }
-    else if($update->message->text == '/chikibrownies')
+    //         $operationString = substr($update->message->text, 10);
+    //         $chikicalcResult = $yayOperate->chikicalc($operationString);
+    //         $response = $client->sendMessage([
+    //                 'chat_id' => $update->message->chat->id,
+    //                 'text' => $chikicalcResult
+    //             ]);
+    // }
+    // else if($update->message->text == '/chikibrownies')
+    // {
+    //     $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+    //     $response = $client->sendMessage([
+    //         'chat_id' => $update->message->chat->id,
+    //         'text' => $yayOperate->chikiRecetaBrownie()
+    //         ]);
+
+    // }
+    else if($update->message->text == '/quesomos')
     {
         $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
         $response = $client->sendMessage([
             'chat_id' => $update->message->chat->id,
-            'text' => $yayOperate->chikiRecetaBrownie()
-            ]);
-
-    }
-    else if($update->message->text == '/chikiquote')
-    {
-        $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
-        $response = $client->sendMessage([
-            'chat_id' => $update->message->chat->id,
-            'text' => $yayOperate->chikiRefranes()
+            'text' => $yayOperate->getQueSomos()
             ]);
 
     }
