@@ -71,7 +71,7 @@ class BotOperate
 				$resultQuote = "Chimporrocotones.";
 				break;
 			default:
-				$resultQuote = "Ya me excité."
+				$resultQuote = "Somos sicarios del cartel de Medellín."
 			;
 		}
 	    return $resultQuote;

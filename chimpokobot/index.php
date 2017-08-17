@@ -40,8 +40,10 @@ try {
     	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
-    		'text' => "List of commands :\n /email -> Get email address of the developer
-             /help -> Shows list of available commands"
+    		'text' => "List of commands :\n
+            /email -> Get email address of the developer\n
+            /quesomos -> Talk to Chimpokobot\n
+            /help -> Shows list of available commands"
     		]);
 
     }
