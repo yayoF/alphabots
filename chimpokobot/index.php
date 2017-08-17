@@ -32,7 +32,7 @@ try {
     	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
     	$response = $client->sendMessage([
         	'chat_id' => $update->message->chat->id,
-        	'text' => "You can send email to : yayo.zip@gmail.com"
+        	'text' => "You can send email to : su_morenito19@latinmail.com"
      	]);
     }
     else if($update->message->text == '/help')
@@ -41,7 +41,7 @@ try {
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
     		'text' => "List of commands :\n
-            /email -> Get email address of the developer\n
+            /email -> Get email address of the creator\n
             /quesomos -> Talk to Chimpokobot\n
             /help -> Shows list of available commands"
     		]);
@@ -85,16 +85,16 @@ try {
             ]);
 
     }
-    else
-    {
+    // else
+    // {
         
-    	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
-    	$response = $client->sendMessage([
-    		'chat_id' => $update->message->chat->id,
-    		'text' => "Invalid command, please use /help to get list of available commands"
-    		]);
+    // 	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+    // 	$response = $client->sendMessage([
+    // 		'chat_id' => $update->message->chat->id,
+    // 		'text' => "Invalid command, please use /help to get list of available commands"
+    // 		]);
             
-    }
+    // }
 
 } catch (\Zelenin\Telegram\Bot\NotOkException $e) {
 
