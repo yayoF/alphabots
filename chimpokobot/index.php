@@ -43,7 +43,7 @@ try {
     		'text' => "List of commands :\n
             /email -> Get email address of the creator\n
             /quesomos -> Talk to Chimpokobot\n
-            /help -> Shows list of available commands"
+            Dile 'chimpo' o menciónale a Eli a ver qué pasa ;)"
     		]);
 
     }
@@ -66,7 +66,8 @@ try {
             ]);
 
     }
-    else if($update->message->text == 'Eli')
+    //look for a word within the string
+    else if(strpos($update->message->text, 'Eli') !== false)
     {
         $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
         $response = $client->sendMessage([
@@ -102,16 +103,7 @@ try {
             ]);
 
     }
-    // else
-    // {
-        
-    // 	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
-    // 	$response = $client->sendMessage([
-    // 		'chat_id' => $update->message->chat->id,
-    // 		'text' => "Invalid command, please use /help to get list of available commands"
-    // 		]);
-            
-    // }
+
 
 } catch (\Zelenin\Telegram\Bot\NotOkException $e) {
 
