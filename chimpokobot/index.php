@@ -32,7 +32,7 @@ try {
     	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
     	$response = $client->sendMessage([
         	'chat_id' => $update->message->chat->id,
-        	'text' => "You can send email to : su_morenito19@latinmail.com"
+        	'text' => "You can send an email to : su_morenito19@latinmail.com"
      	]);
     }
     else if($update->message->text == '/help')
