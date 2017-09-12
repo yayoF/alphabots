@@ -85,6 +85,42 @@ try {
             ]);
 
     }
+    else if($update->message->text == 'Eli')
+    {
+        $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+        $response = $client->sendMessage([
+            'chat_id' => $update->message->chat->id,
+            'text' => 'Eli? Duro contra el muro.'
+            ]);
+
+    }
+    else if($update->message->text == 'qué pasa chimpo?')
+    {
+        $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+        $response = $client->sendMessage([
+            'chat_id' => $update->message->chat->id,
+            'text' => 'Me llegan al pincho todos'
+            ]);
+
+    }
+    else if($update->message->text == 'qué quieres?')
+    {
+        $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+        $response = $client->sendMessage([
+            'chat_id' => $update->message->chat->id,
+            'text' => 'follarte'
+            ]);
+
+    }
+    else if($update->message->text == 'qué ha pasado?')
+    {
+        $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+        $response = $client->sendMessage([
+            'chat_id' => $update->message->chat->id,
+            'text' => 'No quiero bajar a silver :('
+            ]);
+
+    }
     // else
     // {
         
