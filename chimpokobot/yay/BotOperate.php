@@ -19,12 +19,12 @@ class BotOperate
     	return $this->result;
     }
 
-	public function setChiste($value){
-    	$this->chiste = $value;
+	public static function setChiste($value){
+    	self::$chiste = $value;
     }
 
-    public function getChiste(){
-    	return $this->chiste;
+    public static function getChiste(){
+    	return self::$chiste;
     }    
 
     public function randomResponse($value){
