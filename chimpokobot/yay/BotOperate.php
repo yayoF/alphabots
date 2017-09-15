@@ -9,6 +9,14 @@ class BotOperate
         $this->result = "";
     }
 
+    public function setResult($value){
+    	$this->result = $value;
+    }
+
+    public function getResult(){
+    	return $this->result;
+    }
+
     public function randomResponse($value){
 		$randomNumber =rand(0,3);
 		$resultQuote = "";
