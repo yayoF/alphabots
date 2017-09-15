@@ -110,6 +110,15 @@ try {
             ]);
 
     }
+    else if($yayOperate->sanitizeStringPeruvian($update->message->text) == 'oe chimpo avisa')
+    {
+        $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+        $response = $client->sendMessage([
+            'chat_id' => $update->message->chat->id,
+            'text' => 'Uno cat'
+            ]);
+
+    }
 
 
 } catch (\Zelenin\Telegram\Bot\NotOkException $e) {
@@ -127,7 +136,7 @@ echo "
     <meta charset=\"utf-8\">
     <div style=\"font-family: 'Courier New', Courier, 'Lucida Sans Typewriter', 'Lucida Typewriter', monospace;
                 left: 0;line-height: 200px;margin-top: -100px;position: absolute;text-align: center;top: 50%;width: 100%;\">
-        Qué somos? Leones o huevones?
+        I'm Chimpokobot, your friendly chimpobot
     </div>
 ";
 

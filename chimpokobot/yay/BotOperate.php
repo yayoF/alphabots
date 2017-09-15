@@ -9,8 +9,28 @@ class BotOperate
         $this->result = "";
     }
 
+    public function randomResponse($value){
+		$randomNumber =rand(0,3);
+		$resultQuote = "";
+		switch($randomNumber){
+			case 0:
+				$resultQuote = "Leones.";
+				break;
+			case 1:
+				$resultQuote = "Huevones.";
+				break;
+			case 2:
+				$resultQuote = "Chimporrocotones.";
+				break;
+			default:
+				$resultQuote = "Somos sicarios del cartel de Medellín."
+			;
+		}
+	    return $resultQuote;
+	}
+
 	public function getQueSomos(){
-		$randomNumber =rand (0,3);
+		$randomNumber =rand(0,3);
 		$resultQuote = "";
 		switch($randomNumber){
 			case 0:
