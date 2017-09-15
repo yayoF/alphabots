@@ -77,4 +77,9 @@ class BotOperate
 	    return $resultQuote;
 	}
 
+	public function sanitizeStringPeruvian($rawValue){
+
+		return strtolower($rawValue);
+	}
+
 }
