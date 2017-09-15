@@ -73,16 +73,7 @@ try {
             ]);
 
     }
-    //look for a word within the string
-    else if( strpos($yayOperate->sanitizeStringPeruvian($update->message->text)), 'eli' ) !== false)
-    {
-        $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
-        $response = $client->sendMessage([
-            'chat_id' => $update->message->chat->id,
-            'text' => $yayOperate->getEliResponses()
-            ]);
-
-    }
+    
     else if($yayOperate->sanitizeStringPeruvian($update->message->text) == 'qué pasa chimpo?')
     {
         $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
