@@ -44,8 +44,7 @@ class BotOperate
 				$resultQuote = "Eli, no soy un moreno de mier.";
 				break;
 			default:
-				$resultQuote = "";
-			;
+				$resultQuote = "default";
 		}
 	    return $resultQuote;
 	}
