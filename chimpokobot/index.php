@@ -53,6 +53,15 @@ try {
             ]);
 
     }
+    else if($yayOperate->sanitizeStringPeruvian($update->message->text) == 'oe chimpo avisa')
+    {
+        $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+        $response = $client->sendMessage([
+            'chat_id' => $update->message->chat->id,
+            'text' => 'Uno cat'
+            ]);
+
+    }
     //look for a word within the string
     else if( strpos($yayOperate->sanitizeStringPeruvian($update->message->text), 'chimpo') !== false)
     {
@@ -107,15 +116,6 @@ try {
         $response = $client->sendMessage([
             'chat_id' => $update->message->chat->id,
             'text' => 'No quiero bajar a silver :('
-            ]);
-
-    }
-    else if($yayOperate->sanitizeStringPeruvian($update->message->text) == 'oe chimpo avisa')
-    {
-        $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
-        $response = $client->sendMessage([
-            'chat_id' => $update->message->chat->id,
-            'text' => 'Uno cat'
             ]);
 
     }
