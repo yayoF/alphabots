@@ -3,6 +3,7 @@ require_once 'vendor/eos-1.0.0/eos.class.php';
 class BotOperate
 {
     private $result;
+    private $chiste;
 
     public function __construct()
     {
@@ -16,6 +17,14 @@ class BotOperate
     public function getResult(){
     	return $this->result;
     }
+
+	public function setChiste($value){
+    	$this->chiste = $value;
+    }
+
+    public function getChiste(){
+    	return $this->chiste;
+    }    
 
     public function randomResponse($value){
 		$randomNumber =rand(0,3);

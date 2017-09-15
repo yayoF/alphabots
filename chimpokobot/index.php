@@ -53,14 +53,24 @@ try {
             ]);
 
     }
-    else if( strpos($yayOperate->sanitizeStringPeruvian($update->message->text), 'setchimpovalor') !== false)
+    else if( strpos($yayOperate->sanitizeStringPeruvian($update->message->text), 'setChiste') !== false)
     {
-        $yayOperate->setResult($yayOperate->sanitizeStringPeruvian($update->message->text));
+        $prefixlessResponse = str_replace('setChiste ', '', $yayOperate->sanitizeStringPeruvian($update->message->text));
+        $yayOperate->setChiste($prefixlessResponse);
 
         $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
         $response = $client->sendMessage([
             'chat_id' => $update->message->chat->id,
-            'text' => $yayOperate->getResult()
+            'text' => "Haha, qué buena amiguits. Lo recordaré."
+            ]);
+
+    }
+    else if( strpos($yayOperate->sanitizeStringPeruvian($update->message->text), 'cuéntame un chiste') !== false)
+    {
+        $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+        $response = $client->sendMessage([
+            'chat_id' => $update->message->chat->id,
+            'text' => $yayOperate->getChiste()
             ]);
 
     }
