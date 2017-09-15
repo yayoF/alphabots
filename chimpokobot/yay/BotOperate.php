@@ -3,7 +3,7 @@ require_once 'vendor/eos-1.0.0/eos.class.php';
 class BotOperate
 {
     private $result;
-    private static $chiste;
+    public static $chiste;
 
     public function __construct()
     {
