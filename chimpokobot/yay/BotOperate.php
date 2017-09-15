@@ -3,12 +3,12 @@ require_once 'vendor/eos-1.0.0/eos.class.php';
 class BotOperate
 {
     private $result;
-    private $chiste;
+    private static $chiste;
 
     public function __construct()
     {
         $this->result = "";
-        $this->chiste = "testConstructor";
+        $this->chiste = "";
     }
 
     public function setResult($value){
