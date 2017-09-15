@@ -56,7 +56,7 @@ try {
     else if( strpos($yayOperate->sanitizeStringPeruvian($update->message->text), 'setchiste') !== false)
     {
         $prefixlessResponse = str_replace('setchiste ', '', $yayOperate->sanitizeStringPeruvian($update->message->text));
-        $yayOperate->setChiste($update->message->text);
+        $yayOperate->setChiste($prefixlessResponse);
 
         $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
         $response = $client->sendMessage([
@@ -70,7 +70,7 @@ try {
         $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
         $response = $client->sendMessage([
             'chat_id' => $update->message->chat->id,
-            'text' => $yayOperate->getChiste()
+            'text' => "lalala"
             ]);
 
     }
