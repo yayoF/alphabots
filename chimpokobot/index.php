@@ -63,16 +63,6 @@ try {
 
     }
     //look for a word within the string
-    else if( strpos($yayOperate->sanitizeStringPeruvian($update->message->text), 'chimpo') !== false)
-    {
-        $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
-        $response = $client->sendMessage([
-            'chat_id' => $update->message->chat->id,
-            'text' => 'Me hablas a mí?'
-            ]);
-
-    }
-    //look for a word within the string
     else if( strpos($yayOperate->sanitizeStringPeruvian($update->message->text), 'pubg') !== false)
     {
         $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
@@ -116,6 +106,16 @@ try {
         $response = $client->sendMessage([
             'chat_id' => $update->message->chat->id,
             'text' => 'No quiero bajar a silver :('
+            ]);
+
+    }
+    //look for a word within the string
+    else if( strpos($yayOperate->sanitizeStringPeruvian($update->message->text), 'chimpo') !== false)
+    {
+        $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+        $response = $client->sendMessage([
+            'chat_id' => $update->message->chat->id,
+            'text' => 'Me hablas a mí?'
             ]);
 
     }
