@@ -8,7 +8,7 @@ class BotOperate
     public function __construct()
     {
         $this->result = "";
-        $this->chiste = "";
+        $this->chiste = "testConstructor";
     }
 
     public function setResult($value){
