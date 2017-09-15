@@ -53,14 +53,14 @@ try {
             ]);
 
     }
-    else if( strpos($yayOperate->sanitizeStringPeruvian($update->message->text), 'setChimpoValor') !== false)
+    else if( strpos($yayOperate->sanitizeStringPeruvian($update->message->text), 'setchimpovalor') !== false)
     {
-        //$yayOperate->setResult($yayOperate->sanitizeStringPeruvian($update->message->text));
+        $yayOperate->setResult($yayOperate->sanitizeStringPeruvian($update->message->text));
 
         $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
         $response = $client->sendMessage([
             'chat_id' => $update->message->chat->id,
-            'text' => "chimpoValor all set"
+            'text' => $yayOperate->getResult()
             ]);
 
     }
