@@ -74,7 +74,7 @@ try {
 
     }
     //look for a word within the string
-    else if( strpos($yayOperate->sanitizeStringPeruvian($update->message->text)), 'Eli' ) !== false)
+    else if( strpos($yayOperate->sanitizeStringPeruvian($update->message->text)), 'eli' ) !== false)
     {
         $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
         $response = $client->sendMessage([
