@@ -79,7 +79,7 @@ try {
         $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
         $response = $client->sendMessage([
             'chat_id' => $update->message->chat->id,
-            'text' => 'Eli? Duro contra el muro.'
+            'text' => $yayOperate->getEliResponses()
             ]);
 
     }
