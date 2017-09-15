@@ -3,7 +3,7 @@ require_once 'vendor/eos-1.0.0/eos.class.php';
 class BotOperate
 {
     private $result;
-    public static $chiste;
+    private $chiste;
 
     public function __construct()
     {
@@ -20,11 +20,11 @@ class BotOperate
     }
 
 	public static function setChiste($value){
-    	self::$chiste = $value;
+    	$this->chiste = $value;
     }
 
     public static function getChiste(){
-    	return self::$chiste;
+    	return $this->chiste;
     }    
 
     public function randomResponse($value){
@@ -97,7 +97,7 @@ class BotOperate
 				$resultQuote = "Eli? Duro contra el muro.";
 				break;
 			case 1:
-				$resultQuote = "Sáquenle el dedo.";
+				$resultQuote = "Ya no molesten a Eli, es mi novia.";
 				break;
 			case 2:
 				$resultQuote = "Eli, no soy un moreno de mier.";
