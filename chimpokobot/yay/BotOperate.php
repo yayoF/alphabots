@@ -29,6 +29,27 @@ class BotOperate
 	    return $resultQuote;
 	}
 
+	public function getChimpoAvisa(){
+		$randomNumber =rand(0,1);
+		$resultQuote = "";
+		switch($randomNumber){
+			case 0:
+				$resultQuote = "uno cat";
+				break;
+			case 1:
+				$resultQuote = "rusharon medio";
+				break;
+			case 2:
+				$resultQuote = "nada";
+				break;
+			default:
+				$resultQuote = "nada."
+			;
+		}
+	    return $resultQuote;
+	}
+
+
 	public function getQueSomos(){
 		$randomNumber =rand(0,3);
 		$resultQuote = "";
