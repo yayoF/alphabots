@@ -8,6 +8,7 @@ class BotOperate
     public function __construct()
     {
         $this->result = "";
+        $this->chiste = "";
     }
 
     public function setResult($value){
