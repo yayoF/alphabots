@@ -61,7 +61,7 @@ class BotOperate
 				$resultQuote = "No, ya no voy medio";
 				break;
 			default:
-				$resultQuote = "Pasaron medio, suave connector"
+				$resultQuote = "Efectivamente es A"
 			;
 		}
 	    return $resultQuote;
