@@ -74,7 +74,7 @@ try {
             ]);
 
     }
-    else if($yayOperate->sanitizeStringPeruvian($update->message->text) == 'oe chimpo avisa')
+    else if($yayOperate->sanitizeStringPeruvian($update->message->text) == ('chimpo avisa' || 'avisa chimpo') )
     {
         $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
         $response = $client->sendMessage([

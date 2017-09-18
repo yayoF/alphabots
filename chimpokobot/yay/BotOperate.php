@@ -48,7 +48,7 @@ class BotOperate
 	}
 
 	public function getChimpoAvisa(){
-		$randomNumber =rand(0,2);
+		$randomNumber =rand(0,3);
 		$resultQuote = "";
 		switch($randomNumber){
 			case 0:
@@ -61,7 +61,7 @@ class BotOperate
 				$resultQuote = "No, ya no voy medio";
 				break;
 			default:
-				$resultQuote = "nada."
+				$resultQuote = "Pasaron medio, suave conector"
 			;
 		}
 	    return $resultQuote;
