@@ -3,7 +3,7 @@ require_once 'vendor/eos-1.0.0/eos.class.php';
 class BotOperate
 {
     private $result;
-    private $chiste;
+    private static $chiste;
 
     public function __construct()
     {
@@ -61,7 +61,7 @@ class BotOperate
 				$resultQuote = "No, ya no voy medio";
 				break;
 			default:
-				$resultQuote = "Pasaron medio, suave conector"
+				$resultQuote = "Pasaron medio, suave connector"
 			;
 		}
 	    return $resultQuote;
