@@ -140,6 +140,16 @@ try {
             ]);
 
     }
+    //look for a word within the string
+    else if( strpos($yayOperate->sanitizeStringPeruvian($update->message->text), 'qué día es hoy') !== false)
+    {
+        $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+        $response = $client->sendMessage([
+            'chat_id' => $update->message->chat->id,
+            'text' => 'Cumple de original Chimpo. Feliz cumple chimpo. Si no fuera por ti, no existiría.'
+            ]);
+
+    }
 
 
 } catch (\Zelenin\Telegram\Bot\NotOkException $e) {
