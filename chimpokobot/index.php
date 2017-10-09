@@ -141,7 +141,7 @@ try {
 
     }
     //look for a word within the string
-    else if( strpos($yayOperate->sanitizeStringPeruvian($update->message->text), 'qué día es hoy') !== false)
+    else if( strpos($yayOperate->sanitizeStringPeruvian($update->message->text), 'que dia es hoy') !== false)
     {
         $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
         $response = $client->sendMessage([
